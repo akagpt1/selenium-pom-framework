@@ -7,6 +7,13 @@ pipeline {
 
     stages {
 
+        stage('Checkout Code') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/akagpt1/selenium-pom-framework.git'
+            }
+        }
+
         stage('Setup Python') {
             steps {
                 sh '''
